@@ -14,4 +14,18 @@ function showEmailForm() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document
+  const form = document.getElementById("emailForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" }
+    })
+      .then(response => {
+        if (response.ok) {
+          form.reset();
+          document.getElementById("confirmation").style.display = "block";
+        } else {
+          alert("Greška pri slanju. Pokušajte ponovo.");
