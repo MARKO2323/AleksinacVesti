@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aleksinac Vesti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Baner -->
+  <header id="pocetna" class="banner">
+    <img src="images/amblem.png" alt="Amblem Aleksinca" />
+  </header>
+
+  <!-- Navigacija -->
+  <nav>
+    <ul>
+      <li><a href="#pocetna">Početna</a></li>
+      <li><a href="#vesti">Vesti</a></li>
+      <li><a href="#sednice">Sednice</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero sekcija -->
+  <main>
+    <section id="vesti" class="hero">
+      <div class="slogan">Informacije koje pokreću naš grad</div>
+    </section>
+
+    <!-- Sednice -->
+    <section id="sednice" class="audio-sednice">
+      <h2>Audio zapisnici sednica</h2>
+      <div class="audio-list">
+        <div class="audio-item">
+          <p>Sednica 12. decembar 2024</p>
+          <audio controls>
+            <source src="audio/sednice/Sednica 12.12.2024.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+        <div class="audio-item">
+          <p>Sednica 13. novembar 2024</p>
+          <audio controls>
+            <source src="audio/sednice/sednica 13-11-2024.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="contact">
+      <h2>Kontakt</h2>
+      <p>Opština Aleksinac</p>
+      <p>Email: info@aleksinac.rs</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Opština Aleksinac</p>
+  </footer>
+
+  <!-- Pop-up obaveštenje -->
+  <div id="popup" class="popup">
+    <p>Želite li da primate obaveštenja?</p>
+    <button onclick="showEmailForm()">Da</button>
+    <button onclick="closePopup()">Ne</button>
+
+    <form id="emailForm" action="https://formspree.io/f/xbIbejnk" method="POST" style="display:none; margin-top:10px;">
+      <label for="email">Unesite vašu email adresu:</label><br />
+      <input type="email" id="email" name="email" required />
+      <button type="submit">Pošalji</button>
+      <p id="confirmation" style="display:none; color:green; font-weight:bold; margin-top:10px;">Hvala! Prijavljeni ste.</p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
